@@ -32,7 +32,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        display-name = "DEF";
+                        display-name = "MAIN";
 // -----------------------------------------------------------------------------------------
 // |   ~  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |BSPC  |
 // | TAB  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CTRL/'|
@@ -42,7 +42,7 @@
    &mt ESC GRAVE &kp Q &kp W &kp E &kp R &kp T &kp Y           &kp U  &kp I     &kp O   &kp P    &mt BSPC LBKT
    &mt LCTRL TAB &kp A &kp S &kp D &kp F &kp G &kp H           &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
    &kp CTRL      &kp Z &kp X &kp C &kp V &kp B &kp N           &kp M  &kp COMMA &kp DOT &kp FSLH &mt RALT BSLH
-               &mt LGUI RET &mt LSHFT SPACE  &tog CLM          &tog DEF &mt SYM RET &lt RSE DEL
+               &mt LGUI RET &mt LSHFT SPACE  &tog CLM          &tog MAIN &mt SYM RET &lt RSE DEL
                         >;
                 };
                 colemak_layer {
@@ -60,7 +60,7 @@
                         >;
                 };
                 lower_layer {
-                        display-name = "LWR";
+                        display-name = "SYM";
 // -----------------------------------------------------------------------------------------
 // |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
 // |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
