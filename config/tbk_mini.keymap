@@ -18,30 +18,6 @@
 &lt { quick-tap-ms = <200>; };
 &mt { quick-tap-ms = <200>; };
 
-/ {
-    behaviors {
-        // Создаем кастомное поведение для переключения слоя при коротком нажатии и LSHIFT при длинном.
-        layer_toggle_lshift: behavior {
-            compatible = "zmk,behavior-tap-hold";
-            label = "LT(CLM)_LSHIFT";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>; // Настраиваем время, после которого удержание считается "длинным".
-            quick-tap-ms = <0>;
-            flavor = "balanced"; // Опция для более предсказуемого поведения.
-            bindings = <
-                &mo CLM // Короткое нажатие: переключение на слой CLM
-                &kp LSHIFT // Долгое нажатие: удержание левого шифта
-            >;
-        };
-    };
-
-    keymap {
-        compatible = "zmk,keymap";
-
-        // Замените <ROW> и <COL> на координаты вашей клавиши.
-        3 2 = &layer_toggle_lshift;
-    };
-};
 
 / {
     conditional_layers {
@@ -56,17 +32,17 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        display-name = "MAIN";
+                        display-name = "DEF";
 // -----------------------------------------------------------------------------------------
 // |   ~  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |BSPC  |
 // | TAB  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |CTRL/'|
 // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |RALT/\|
-//                    | RSE | SPC | LWR |   | LWR | BKSP | RSE |
+//                    | RSE | SPC | CLM |   | DEF | RET | RSE |
                         bindings = <
    &mt ESC GRAVE &kp Q &kp W &kp E &kp R &kp T &kp Y           &kp U  &kp I     &kp O   &kp P    &mt BSPC LBKT
    &mt LCTRL TAB &kp A &kp S &kp D &kp F &kp G &kp H           &kp J  &kp K     &kp L   &kp SEMI &mt RCTRL SQT
    &kp CTRL      &kp Z &kp X &kp C &kp V &kp B &kp N           &kp M  &kp COMMA &kp DOT &kp FSLH &mt RALT BSLH
-               &mt LGUI RET &mt LSHFT SPACE                    &lt LWR ESC &mt RSHFT BSPC &lt RSE DEL
+               &mt LGUI RET &mt LSHFT SPACE  &tg CLM           &tg DEF &mt SYM RET &lt RSE DEL
                         >;
                 };
                 colemak_layer {
@@ -84,7 +60,7 @@
                         >;
                 };
                 lower_layer {
-                        display-name = "SYM";
+                        display-name = "LWR";
 // -----------------------------------------------------------------------------------------
 // |  _  |  F1 |  F2 |  F3 |  F4 |  F5 |   |  F6 |  F7 |  F8 |  F9 | F10 | F11 |
 // |  +  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |  -  |
