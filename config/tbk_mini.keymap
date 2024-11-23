@@ -91,13 +91,13 @@
                         display-name = "CLM";
 // -----------------------------------------------------------------------------------------
 // | ~    |  Q  |  W  |  E  |  P  |  G  |   | J | L | U | Y | ; | BSPC |
-// |CTRL  |  A  |  S  |  D  |  F  |  D  |   | MUT | LEFT|  UP | RGHT| INS | APP |
-// | LALT |  Z  |  X  |  C  |  V  |  B  |   | VOLD| END | DOWN| PGDN| PAUS|     |
+// |CTRL  |  A  |  S  |  D  |  F  |  D  |   | H | N | E | I | O | APP |
+// | LALT |  Z  |  X  |  C  |  V  |  B  |   | K | M | , | . | PAUS|     |
 //                    |     | CLM | ADJ |   | ADJ |     |     |
                         bindings = <
    &mt ESC GRAVE  &kp Q &kp W &kp E &kp P &kp G        &kp J &kp L &kp U &kp Y &kp SEMI &mt RGUI CAPS
-   &mt LCTRL TAB &kp A &kp S &kp D &kp F &kp D         &kp C_MUTE   &kp LEFT &kp UP    &kp RIGHT &kp INS  &mt RCTRL K_APP
-   &kp LALT  &kp Z &kp X &kp C &kp V &kp B             &kp C_VOL_DN &kp END  &kp DOWN  &kp PG_DN &kp PAUSE_BREAK &trans
+   &mt LCTRL TAB &kp A &kp S &kp D &kp F &kp D         &kp H   &kp N &kp E    &kp I &kp O  &mt RCTRL K_APP
+   &kp LALT  &kp Z &kp X &kp C &kp V &kp B             &kp K &kp M  &kp DOWN  &kp COMMA &kp DOT &trans
                         &trans &tog CLM &trans        &trans &trans &trans
                         >;
                 };
